@@ -8,15 +8,15 @@ require 'sinatra/activerecord'
 require 'haml'
 require 'builder'
 
+set :database, "sqlite3:db/my_database.db"
+enable :sessions
+=begin
 require_relative './models/courselink'
 require_relative './models/week'
 
-set :database, "sqlite3:db/my_database.db"
 
 
-enable :sessions
 
-=begin
 configure do
   set :slack, "http://onlineprototypes2016.slack.com/"
   set :site, 'https://daraghbyrne.github.io/onlineprototypes2016/'
@@ -26,7 +26,7 @@ configure do
   set :class_time_tuesday_end, Time.new( 2016, 10, 25, 14, 50 )
   set :office_hours_start, Time.new(2016, 10, 27, 12, 00)
   set :office_hours_end, Time.new(2016, 10, 27,  14, 00)
-=begin  
+  
   set :links, ["https://medium.com/ideo-stories/chatbots-ultimate-prototyping-tool-e4e2831967f3#.3pif99l08", "http://www.bloomberg.com/news/articles/2015-09-17/who-needs-an-interface-anyway-", "https://digit.co", "https://getmagic.com", "https://hirepeter.com", "http://callfrank.org", "https://twitter.com/slashgif", "http://pentametron.com", "https://twitter.com/NYTMinusContext", "https://slack.getbirdly.com", "https://developer.amazon.com/alexa", "https://www.producthunt.com/@rrhoover/collections/invisible-apps"]
  
 end
