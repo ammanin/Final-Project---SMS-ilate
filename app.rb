@@ -16,7 +16,7 @@ set :database, "sqlite3:db/my_database.db"
 
 enable :sessions
 
-
+=begin
 configure do
   set :slack, "http://onlineprototypes2016.slack.com/"
   set :site, 'https://daraghbyrne.github.io/onlineprototypes2016/'
@@ -28,7 +28,7 @@ configure do
   set :office_hours_end, Time.new(2016, 10, 27,  14, 00)
 =begin  
   set :links, ["https://medium.com/ideo-stories/chatbots-ultimate-prototyping-tool-e4e2831967f3#.3pif99l08", "http://www.bloomberg.com/news/articles/2015-09-17/who-needs-an-interface-anyway-", "https://digit.co", "https://getmagic.com", "https://hirepeter.com", "http://callfrank.org", "https://twitter.com/slashgif", "http://pentametron.com", "https://twitter.com/NYTMinusContext", "https://slack.getbirdly.com", "https://developer.amazon.com/alexa", "https://www.producthunt.com/@rrhoover/collections/invisible-apps"]
-=end 
+ 
 end
 get '/reset_views' do
 	reset_views
@@ -326,6 +326,7 @@ get "/interesting_link" do
   return_string
 end
 
+
 def reset_views
 	session[:viewed] = []
 end
@@ -341,7 +342,7 @@ def last_three_views
   session[:viewed] ||= []
   session[:viewed].last( 3 )
 end 
-
+=end
 error 403 do
   
   halt 403, 
